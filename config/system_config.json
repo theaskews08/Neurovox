@@ -1,0 +1,39 @@
+{
+    "system": {
+        "name": "NeuroVox",
+        "version": "1.0.0"
+    },
+    "audio": {
+        "stt": {
+            "model_size": "medium",
+            "language": "en",
+            "beam_size": 5,
+            "sample_rate": 16000,
+            "record_duration": 5
+        },
+        "tts": {
+            "api_url": "http://localhost:8080/api/tts",
+            "voice": "default"
+        }
+    },
+    "brain": {
+        "llm": {
+            "model": "llama3:8b-q4_0",
+            "api_url": "http://localhost:11434/api/generate",
+            "temperature": 0.7,
+            "max_tokens": 500
+        },
+        "memory": {
+            "short_term_length": 10,
+            "max_tokens": 2000
+        }
+    },
+    "resources": {
+        "gpu_memory": 8192,
+        "allocations": {
+            "stt": 2048,
+            "llm": 4096,
+            "tts": 512
+        }
+    }
+}
